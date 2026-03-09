@@ -1,0 +1,10 @@
+path: dataset
+train: images/train
+val: images/test
+
+names:
+  0: Longitudinal Crack
+  1: Transverse Crack
+  2: Alligator Crack
+  3: Pothole
+  4: Other Corruption

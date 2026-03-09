@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛣️ Road Damage Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>🛣️ Road Damage Detection</h1>
+        <p>Upload media or use live webcam to detect road defects.</p>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button id="uploadTab" class="active">📂 Upload</button>
+            <button id="liveTab">🎥 Live Webcam</button>
+            <button id="predictBtn">🔍 Analyze</button>
+        </div>
+
+        <!-- Upload Section -->
+        <div id="uploadSection" class="section">
+            <div id="dropZone">
+                <p>📂 Drag & Drop or Click to Upload</p>
+                <input type="file" id="mediaUpload" accept="image/*,video/*" hidden>
+            </div>
+            <div id="preview"></div>
+        </div>
+
+        <!-- Live Webcam -->
+        <div id="liveSection" class="section hidden">
+            <video id="webcam" autoplay playsinline muted></video>
+        </div>
+
+        <div id="loader" class="hidden">⏳ Processing...</div>
+
+        <!-- Output -->
+        <div class="output">
+
+            <!-- Header + Download Button -->
+            <div class="output-header">
+                <h3>Detection Summary</h3>
+                <button id="downloadBtn">⬇ Download Report</button>
+            </div>
+
+            <div class="counter-grid">
+                <div>Longitudinal Crack: <span id="D00">0</span></div>
+                <div>Transverse Crack: <span id="D10">0</span></div>
+                <div>Alligator Crack: <span id="D20">0</span></div>
+                <div>Pothole: <span id="D40">0</span></div>
+
+                <div class="full-width">
+                    Other Corruption: <span id="OTHER">0</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

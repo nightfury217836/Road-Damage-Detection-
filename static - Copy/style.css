@@ -1,0 +1,256 @@
+/* =============BACKGROUND============ */
+body {
+    margin: 0;
+    height: 100vh;
+
+    /* NEW IMAGE BACKGROUND */
+    background-image: url("/static/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* KEEP OLD LAYOUT */
+    display: flex;
+    align-items: center;
+
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* ============MAIN CARD============ */
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    width: 460px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+.card h1 {
+    margin-bottom: 8px;
+    color: #1e3a8a;
+}
+
+.card p {
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* ========TABS=========== */
+.tabs {
+    display: flex;
+    margin: 18px 0;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #e5e7eb;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+.tabs button.active {
+    background: #2563eb;
+    color: white;
+}
+
+.tabs button:hover {
+    background: #1d4ed8;
+    color: white;
+}
+
+#confValue {
+    font-weight: bold;
+    color: #2563eb;
+    margin-left: 6px;
+}
+
+/* =========SECTIONS=========== */
+.section {
+    margin: 12px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===============DROP ZONE=============== */
+#dropZone {
+    border: 2px dashed #2563eb;
+    border-radius: 12px;
+    padding: 18px;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#dropZone:hover {
+    background: #eff6ff;
+}
+
+/* ===== LIMIT UPLOADED MEDIA SIZE ===== */
+#dropZone img,
+#dropZone video {
+    width: 100%;
+    max-height: 260px;   /* prevents card expansion */
+    object-fit: contain; /* keeps full image visible */
+    border-radius: 10px;
+}
+
+
+/* =============MEDIA PREVIEW============= */
+#preview img,
+#preview video,
+#webcam {
+    width: 100%;
+    max-height: 260px;      /* LIMIT HEIGHT */
+    object-fit: contain;    /* Keep aspect ratio */
+    border-radius: 12px;
+    margin-top: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* ========================= ANALYZE BUTTON ========================= */
+button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* ===== CONTROL ROW (Slider + Button) ===== */
+.control-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+
+/* Reduce button height alignment */
+#predictBtn {
+    margin-top: 0;
+    height: 42px;
+    white-space: nowrap;
+}
+
+
+/* ========================= LOADER ========================= */
+#loader {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ========================= OUTPUT CONTAINER ========================= */
+.output {
+    margin-top: 22px;
+    padding: 18px;
+    background: #f9fafb;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    color: #111827;
+}
+
+/* Header (Title + Download) */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.output h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* ========================= COUNTER GRID ========================= */
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* ========================= COUNTER BOXES ========================= */
+.counter-grid div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: 0.25s;
+}
+
+.counter-grid div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Numbers */
+.counter-grid span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #111827;
+    color: white;
+}
+
+/* ========================= FULL WIDTH BOX ========================= */
+.full-width {
+    grid-column: span 2;
+}
+
+/* ========================= COLOR ACCENTS ========================= */
+.counter-grid div:nth-child(1) { border-left: 6px solid #ef4444; }
+.counter-grid div:nth-child(2) { border-left: 6px solid #3b82f6; }
+.counter-grid div:nth-child(3) { border-left: 6px solid #8b5cf6; }
+.counter-grid div:nth-child(4) { border-left: 6px solid #f59e0b; }
+.counter-grid div:nth-child(5) { border-left: 6px solid #6b7280; }
+
+/* ========================= DOWNLOAD BUTTON ========================= */
+#downloadBtn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00e0ff, #007bff);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#downloadBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,224,255,0.7);
+}
+
+/* ========== Prevent Empty Space Jump ============*/
+.hidden {
+    display: none 
+}
+
